@@ -5,9 +5,9 @@ import { isAuth } from '../middleware/auth.js';
 
 const router = express.Router();
 
-router.post('/', isAuth, speakingController.createPayment);
-router.get('/', isAuth, speakingController.getPayment);
-router.get('/:id', isAuth, speakingController.getPaymentId);
-router.get('/:id', isAuth, speakingController.mofifyPayment);
+router.post('/', isAuth, paymentController.createPayment);
+router.get('/', isAuth, paymentController.getPayment);
+router.get('/:id', isAuth, paymentController.getPaymentId);
+router.patch('/:id', isAuth, paymentController.patchPayment);
 
 export default router;
