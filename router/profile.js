@@ -8,6 +8,6 @@ import { isAuth } from '../middleware/auth.js';
 const router = express.Router();
 
 router.get('/', isAuth, profileController.getProfile);
-router.patch('/', isAuth, profileController.patchProfile);
+router.patch('/', isAuth, profileController.updateProfile);
 
 export default router;
