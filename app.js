@@ -7,10 +7,12 @@ import cookieParser from 'cookie-parser';
 
 import authRouter from './router/auth.js';
 import receiptRouter from './router/receipt.js';
-import partyRouter from './router/party.js';
+import partyRouter from './router/group.js';
 import cartimageRouter from './router/cart.js';
 import orderRouter from './router/order.js';
 import paymentRouter from './router/payment.js';
+import profileRouter from './router/profile.js';
+import profileRouter from './router/participate.js';
 
 import { config } from './config.js';
 import {db} from './db/database.js';
@@ -30,10 +32,12 @@ app.use(morgan('tiny'));
 
 app.use('/auth', authRouter);
 app.use('/profile', receiptRouter);
-app.use('/category', partyRouter);
+app.use('/category', groupRouter);
 app.use('/presigned', cartRouter);
 app.use('/speaking', orderRouter);
 app.use('/test', paymentRouter);
+app.use('/test', profileRouter);
+app.use('/test', participateRouter);
 
 app.use((req,res,next)=>{ 
     res.sendStatus(404);
@@ -45,5 +49,4 @@ app.use((error,req,res,next) => {
 });
 
 db.getConnection();
-
 app.listen(config.port);
