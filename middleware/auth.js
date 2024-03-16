@@ -32,9 +32,9 @@ export const isAuth = async (req, res, next) => {
             if (!user.email.endsWith('@ewhain.net')) {
                 return res.status(401).json(EWHAIN_ERROR);
             }
-            req.userId = user.id;
+            req.user_id = user.id;
             req.token = token;
             next();
         }
     );
-};
+}
