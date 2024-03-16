@@ -38,10 +38,10 @@ AI 기반 배달 애플리케이션 **👑** **밥이화(BabEwha) 👑** AI 레�
 
 ## 🎙 백엔드 사용 기술
 
-| <img width="150" src="https://github.com/BabEwha/BabEwha-ai/assets/91009436/308a95f6-290f-4690-992e-830980b2124f"/> | <img width="150" src="https://github.com/BabEwha/BabEwha-ai/assets/91009436/6937d48b-ca43-43de-ab75-5f96c19e1e62"/> | <img width="150" src="https://github.com/BabEwha/BabEwha-ai/assets/91009436/8495377d-7f0b-4f80-8b6f-b78b6e5064fb"/> |
-| --- | --- | --- |
-| **서버** | **데이터** | **배포** |
-| Django | AWS S3 | AWS EC2 |
+| <img width="150" src="https://github.com/BabEwha/BabEwha-ai/assets/91009436/308a95f6-290f-4690-992e-830980b2124f"/> | <img width="150" src="https://github.com/BabEwha/BabEwha-ai/assets/91009436/e8a148c9-5e77-488e-8551-19f7c978275d"/> | <img width="150" src="https://github.com/BabEwha/BabEwha-ai/assets/91009436/6937d48b-ca43-43de-ab75-5f96c19e1e62"/> | <img width="150" src="https://github.com/BabEwha/BabEwha-ai/assets/91009436/8495377d-7f0b-4f80-8b6f-b78b6e5064fb"/> |
+| --- | --- | --- | --- |
+| **서버** | **DB 관리** | **데이터 관리** | **배포** |
+| Django | MySQL | AWS S3 | AWS EC2 |
 
 <br/>
 
