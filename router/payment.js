@@ -8,6 +8,6 @@ const router = express.Router();
 router.post('/', isAuth, paymentController.createPayment);
 router.get('/', isAuth, paymentController.getPayment);
 router.get('/:id', isAuth, paymentController.getPaymentId);
-router.patch('/:id', isAuth, paymentController.patchPayment);
+router.patch('/:id', isAuth, paymentController.updatePayment);
 
 export default router;
