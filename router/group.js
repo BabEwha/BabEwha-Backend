@@ -7,8 +7,9 @@ import { isAuth } from '../middleware/auth.js';
 
 const router = express.Router();
 
-router.post('/', isAuth, categoryController.createGroup);
-router.put('/:id', isAuth, categoryController.updateGroup);
-router.delete('/:id', isAuth, categoryController.deleteGroup);
+router.get('/:id', isAuth, groupController.getGroup);
+router.post('/', isAuth, groupController.createGroup);
+router.patch('/:id', isAuth, groupController.updateGroup);
+router.delete('/:id', isAuth, groupController.deleteGroup);
 
 export default router;
