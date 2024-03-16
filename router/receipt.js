@@ -5,8 +5,8 @@ import { isAuth } from '../middleware/auth.js';
 
 const router = express.Router();
 
-router.post('/', isAuth, speakingController.createReceipt);
-router.patch('/', isAuth, speakingController.updateReceipt);
-router.get('/:id', isAuth, speakingController.getReceipt);
+router.post('/', isAuth, receiptController.createReceipt);
+router.patch('/', isAuth, receiptController.updateReceipt);
+router.get('/:id', isAuth, receiptController.getReceipt);
 
 export default router;
