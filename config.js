@@ -1,7 +1,5 @@
-//환경변수 변경
 import dotenv from 'dotenv';
 dotenv.config();
-
 
 function required(key, defaultValue = undefined){
     const value = process.env[key] || defaultValue;
