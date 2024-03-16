@@ -1,6 +1,5 @@
 import {db} from '../db/database.js'
 
-// 사용자 이메일로 찾기
 export async function findByEmail(email) { 
     return db.execute('SELECT * FROM user WHERE email=?', [email])
     .then((result)=>result[0][0]);
