@@ -41,7 +41,7 @@
 
 ## 🍙 백엔드 사용 기술
 
-| <img width="150" src="https://github.com/BabEwha/BabEwha-ai/assets/91009436/308a95f6-290f-4690-992e-830980b2124f"/> | <img width="150" src="https://github.com/BabEwha/BabEwha-ai/assets/91009436/e8a148c9-5e77-488e-8551-19f7c978275d"/> | <img width="150" src="https://github.com/BabEwha/BabEwha-ai/assets/91009436/6937d48b-ca43-43de-ab75-5f96c19e1e62"/> | <img width="150" src="https://github.com/BabEwha/BabEwha-ai/assets/91009436/8495377d-7f0b-4f80-8b6f-b78b6e5064fb"/> |
+| <img width="150" src="https://github.com/BabEwha/BabEwha-ai-private/assets/91009436/e6e67c4b-a277-41ec-b0a4-e7056b3af2b9"/> | <img width="150" src="https://github.com/BabEwha/BabEwha-ai-private/assets/91009436/b77a0873-1c1f-4e9a-b5f2-2bb8a94dc1c7"/> | <img width="150" src="https://github.com/BabEwha/BabEwha-ai-private/assets/91009436/af74bdba-9617-477d-ad85-83b286cf14ea"/> | <img width="150" src="https://github.com/BabEwha/BabEwha-ai-private/assets/91009436/d4c2512a-0dce-4f2e-b2b9-043047349607"/> |
 | --- | --- | --- | --- |
 | **서버** | **DB 관리** | **데이터 관리** | **배포** |
 | Django | MySQL | AWS S3 | AWS EC2 |
