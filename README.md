@@ -47,15 +47,67 @@
 
 <br/><br/>
 
-## 🍙 MySQL 쿼리문
-| <img width="200" src=""/> | <img width="200" src=""/> | <img width="200" src=""/> |
-| --- | --- | --- |
-| **** | **** | **** |
-|  |  |  |
+## 🍙 백엔드 기능 설명
+
+### 🍘 주요 코드 설명
+| <img width="400" src="https://github.com/BabEwha/BabEwha-ai-private/assets/91009436/68f6c686-5f8e-4dbf-9557-c05176cb64a1"/> | <img width="400" src="https://github.com/BabEwha/BabEwha-ai-private/assets/91009436/784cb07f-3b02-44f7-8cd7-36f937f7edc9"/> | 
+| --- | --- |
+| **1️⃣** OrderSerializer로 사용자가 특정 배달 모임에 참여하기 위해 외부 배달 앱을 통해 주문하고자 하는 음식의 장바구니 사진을 업로드할 때 사용 <br/> **2️⃣** 사용자가 선택한 배달 모임(group)에 입장할 수 있는 조건을 검증한 후, 조건을 만족하는 경우 Order 테이블과 사용자의 모임 참여 여부를 나타내는 Participate 관계 테이블에 인스턴스를 생성 | **1️⃣** GroupViewSet은 사용자가 특정 그룹에 참여하기 위한 과정을 관리하는 Django REST Framework의 뷰셋 <br/> **2️⃣** 사용자 인증, 그룹 정보 직렬화, 그룹 관련 권한 관리, 그룹의 조회 및 조작을 위한 다양한 액션을 포함|
+
+<br/>
+
+### **🍘 주요 테이블 설명**
+
+**1️⃣ `Order` 테이블**
+- 사용자가 배달 모임을 통해 주문한 음식에 대한 정보 저장
+- 주요 필드: **`order_id`** (주문 식별자), **`group`** (배달 모임), **`user`** (주문한 사용자), **`order_image`** (주문 음식의 장바구니 사진), **`order_time`** (주문 시각)
+- **`order_id`** 필드는 읽기 전용, 나머지 필드는 주문 생성 시 필요한 데이터 저장
+
+**2️⃣ `Participate` 테이블**
+- 사용자와 배달 모임 간의 관계 테이블
+- 사용자의 배달 모임 참여 여부, 참여 활성 상태(**`is_active`**)를 포함, 모임의 소유자 여부(**`is_owner`**) 기록
+
+**3️⃣ `Group` 테이블**
+- 그룹 id, 제목, 설명, 장소, 세부 장소, 그룹 이미지, 링크, 생성 시간, 마감 시간, 최대 인원, 현재 인원 수, 그룹 상태 저장
+
+**4️⃣ `Participate` 테이블**
+- 사용자의 참여 그룹, 참여 활성 상태, 모임의 소유자 여부를 기록
+
+<br/>
+
+### **🍘 주요 로직 설명**
+
+사용자가 배달 모임에 원활하게 참여하고 주문을 진행할 수 있도록 모임의 인원 관리 및 주문 상태를 체계적으로 관리
+
+**1️⃣ 사용자 입장 가능성 검증**
+- 사용자가 참여하려는 배달 모임의 현재 인원수 확인
+- 최대 인원수에 도달하지 않았는지 검증 - 최대 인원수 도달시 추가 참여 불가능
+
+**2️⃣ 모임 상태 변경**
+- 모임의 최대 인원수 도달시 모임의 상태를 변경하여 더 이상 새로운 참여자를 받지 않도록 설정
+
+**3️⃣ 데이터 인스턴스 생성**
+- **`Order`** 테이블에 사용자의 주문 데이터를 저장하는 인스턴스를 생성, **`Participate`** 테이블에 사용자와 모임의 관계를 나타내는 새 인스턴스를 생성
+
+**4️⃣ 그룹 검색 및 필터링**
+- 장소, 생성 시간, 마감 시간을 기준으로 그룹 정렬 기능
+
+**5️⃣ 마감 임박 그룹 조회**
+- closing_soon 액션을 통해 마감 시간이 현재로부터 10분 이내인 그룹을 조회
+
+**6️⃣ 그룹 상태 변경**
+- close_group 액션을 통해 그룹의 상태를 변경하여 더 이상 새로운 참여자를 받지 않도록 설정
+
+**7️⃣ 사용자 참여 가능성 검증**
+- 사용자가 이미 활성 상태(is_active==True)로 참여하고 있는 그룹을 제외하고 그룹 목록을 반환
+
+**8️⃣ 보안 및 권한 관리**
+- BasicAuthentication과 SessionAuthentication을 통해 사용자 인증 관리, IsOwnerOrReadOnly 권한 클래스를 사용하여 그룹 소유자만 수정 권한 부여
+  
 
 <br/><br/>
 
-## 🍙 백엔드 응답 확인 (주기능 3가지)
+## 🍙 백엔드 주요 기능 응답 확인
 
 | <img width="300" src="https://github.com/BabEwha/BabEwha-ai-private/assets/91009436/092ea509-35d5-491b-aced-47ed477f1239"/> | <img width="400" src="https://github.com/BabEwha/BabEwha-ai-private/assets/91009436/ab21662a-8203-4395-9842-20cec571714c"/> | <img width="400" src="https://github.com/BabEwha/BabEwha-ai-private/assets/91009436/9f17aabf-5bf6-4eca-a329-9e3efa4b374e"/> |
 | --- | --- | --- |
@@ -65,5 +117,130 @@
 <br/>
 
 ✅ 웹 서비스 주소 (배포 완료): http://18.116.163.161/ (엔드포인트는 상이함)
+
+<br/><br/>
+
+## 🍙 백엔드 폴더구조
+
+```sh
+babewha
+ ┣ babewha
+ ┃ ┣ __pycache__
+ ┃ ┃ ┣ middleware.cpython-311.pyc
+ ┃ ┃ ┣ settings.cpython-311.pyc
+ ┃ ┃ ┣ urls.cpython-311.pyc
+ ┃ ┃ ┣ wsgi.cpython-311.pyc
+ ┃ ┃ ┗ __init__.cpython-311.pyc
+ ┃ ┣ asgi.py
+ ┃ ┣ settings.py
+ ┃ ┣ urls.py
+ ┃ ┣ wsgi.py
+ ┃ ┗ __init__.py
+ ┣ groups
+ ┃ ┣ migrations
+ ┃ ┃ ┣ __pycache__
+ ┃ ┃ ┃ ┣ 0001_initial.cpython-311.pyc
+ ┃ ┃ ┃ ┗ __init__.cpython-311.pyc
+ ┃ ┃ ┣ 0001_initial.py
+ ┃ ┃ ┗ __init__.py
+ ┃ ┣ __pycache__
+ ┃ ┃ ┣ admin.cpython-311.pyc
+ ┃ ┃ ┣ apps.cpython-311.pyc
+ ┃ ┃ ┣ forms.cpython-311.pyc
+ ┃ ┃ ┣ models.cpython-311.pyc
+ ┃ ┃ ┣ permissions.cpython-311.pyc
+ ┃ ┃ ┣ serializers.cpython-311.pyc
+ ┃ ┃ ┣ urls.cpython-311.pyc
+ ┃ ┃ ┣ views.cpython-311.pyc
+ ┃ ┃ ┗ __init__.cpython-311.pyc
+ ┃ ┣ admin.py
+ ┃ ┣ apps.py
+ ┃ ┣ forms.py
+ ┃ ┣ models.py
+ ┃ ┣ permissions.py
+ ┃ ┣ serializers.py
+ ┃ ┣ tests.py
+ ┃ ┣ urls.py
+ ┃ ┣ views.py
+ ┃ ┗ __init__.py
+ ┣ order
+ ┃ ┣ migrations
+ ┃ ┃ ┣ __pycache__
+ ┃ ┃ ┃ ┣ 0001_initial.cpython-311.pyc
+ ┃ ┃ ┃ ┗ __init__.cpython-311.pyc
+ ┃ ┃ ┣ 0001_initial.py
+ ┃ ┃ ┗ __init__.py
+ ┃ ┣ __pycache__
+ ┃ ┃ ┣ admin.cpython-311.pyc
+ ┃ ┃ ┣ apps.cpython-311.pyc
+ ┃ ┃ ┣ models.cpython-311.pyc
+ ┃ ┃ ┣ permissions.cpython-311.pyc
+ ┃ ┃ ┣ serializers.cpython-311.pyc
+ ┃ ┃ ┣ urls.cpython-311.pyc
+ ┃ ┃ ┣ views.cpython-311.pyc
+ ┃ ┃ ┗ __init__.cpython-311.pyc
+ ┃ ┣ admin.py
+ ┃ ┣ apps.py
+ ┃ ┣ forms.py
+ ┃ ┣ models.py
+ ┃ ┣ permissions.py
+ ┃ ┣ serializers.py
+ ┃ ┣ tests.py
+ ┃ ┣ urls.py
+ ┃ ┣ views.py
+ ┃ ┗ __init__.py
+ ┣ payment
+ ┃ ┣ __pycache__
+ ┃ ┃ ┣ admin.cpython-311.pyc
+ ┃ ┃ ┣ apps.cpython-311.pyc
+ ┃ ┃ ┣ models.cpython-311.pyc
+ ┃ ┃ ┣ serializers.cpython-311.pyc
+ ┃ ┃ ┣ urls.cpython-311.pyc
+ ┃ ┃ ┣ utils.cpython-311.pyc
+ ┃ ┃ ┣ views.cpython-311.pyc
+ ┃ ┃ ┗ __init__.cpython-311.pyc
+ ┃ ┣ admin.py
+ ┃ ┣ apps.py
+ ┃ ┣ models.py
+ ┃ ┣ serializers.py
+ ┃ ┣ tests.py
+ ┃ ┣ urls.py
+ ┃ ┣ utils.py
+ ┃ ┣ views.py
+ ┃ ┗ __init__.py
+ ┣ users
+ ┃ ┣ migrations
+ ┃ ┃ ┣ __pycache__
+ ┃ ┃ ┃ ┣ 0001_initial.cpython-311.pyc
+ ┃ ┃ ┃ ┗ __init__.cpython-311.pyc
+ ┃ ┃ ┣ 0001_initial.py
+ ┃ ┃ ┗ __init__.py
+ ┃ ┣ template
+ ┃ ┃ ┗ users
+ ┃ ┃ ┃ ┗ profile_view.html
+ ┃ ┣ __pycache__
+ ┃ ┃ ┣ admin.cpython-311.pyc
+ ┃ ┃ ┣ apps.cpython-311.pyc
+ ┃ ┃ ┣ managers.cpython-311.pyc
+ ┃ ┃ ┣ models.cpython-311.pyc
+ ┃ ┃ ┣ serializers.cpython-311.pyc
+ ┃ ┃ ┣ urls.cpython-311.pyc
+ ┃ ┃ ┣ views.cpython-311.pyc
+ ┃ ┃ ┗ __init__.cpython-311.pyc
+ ┃ ┣ admin.py
+ ┃ ┣ apps.py
+ ┃ ┣ managers.py
+ ┃ ┣ models.py
+ ┃ ┣ serializers.py
+ ┃ ┣ tests.py
+ ┃ ┣ urls.py
+ ┃ ┣ views.py
+ ┃ ┗ __init__.py
+ ┣ __pycache__
+ ┃ ┗ manage.cpython-311.pyc
+ ┣ .env
+ ┣ .gitignore
+ ┣ manage.py
+ ┗ requirement.txt
 
 <br/><br/><br/><br/>
