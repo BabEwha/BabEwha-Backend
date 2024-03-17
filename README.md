@@ -15,7 +15,7 @@
 
 ## 🍙 프로젝트 구조
 
-<img width="1000" src="https://github.com/BabEwha/BabEwha-ai-private/assets/91009436/adda6865-b0f4-4f80-9cad-79eb534990bb"/>
+<img width="800" src="https://github.com/BabEwha/BabEwha-ai-private/assets/91009436/adda6865-b0f4-4f80-9cad-79eb534990bb"/>
 
 - Client: Swift(iOS)
 - Server: Django, MySQL, AWS EC2, AWS S3
