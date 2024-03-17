@@ -50,9 +50,9 @@
 ## 🍙 백엔드 기능 설명
 
 ### 🍘 주요 코드 설명
-| <img width="200" src=""/> | 
+| <img width="600" src="https://github.com/BabEwha/BabEwha-ai-private/assets/91009436/68f6c686-5f8e-4dbf-9557-c05176cb64a1"/> | 
 | --- |
-| 이 OrderSerializer는 사용자가 특정 배달 모임에 참여하기 위해 외부 배달 앱을 통해 주문하고자 하는 음식의 장바구니 사진을 업로드할 때 사용됩니다. 사용자가 선택한 배달 모임(group)에 입장할 수 있는 조건을 검증한 후, 조건을 만족하는 경우 Order 테이블에 새로운 인스턴스를 생성하고, 사용자의 모임 참여 여부를 나타내는 Participate 관계 테이블에도 인스턴스를 생성합니다. 이 과정은 Django의 Serializer를 활용하여 데이터를 직렬화함으로써 이루어집니다. |
+| OrderSerializer로 사용자가 특정 배달 모임에 참여하기 위해 외부 배달 앱을 통해 주문하고자 하는 음식의 장바구니 사진을 업로드할 때 사용. 사용자가 선택한 배달 모임(group)에 입장할 수 있는 조건을 검증한 후, 조건을 만족하는 경우 Order 테이블과 사용자의 모임 참여 여부를 나타내는 Participate 관계 테이블에 인스턴스를 생성. Django의 Serializer를 활용하여 데이터를 직렬화. |
 
 <br/>
 
@@ -95,5 +95,130 @@
 <br/>
 
 ✅ 웹 서비스 주소 (배포 완료): http://18.116.163.161/ (엔드포인트는 상이함)
+
+<br/><br/>
+
+## 🍙 백엔드 폴더구조
+
+```sh
+babewha
+ ┣ babewha
+ ┃ ┣ __pycache__
+ ┃ ┃ ┣ middleware.cpython-311.pyc
+ ┃ ┃ ┣ settings.cpython-311.pyc
+ ┃ ┃ ┣ urls.cpython-311.pyc
+ ┃ ┃ ┣ wsgi.cpython-311.pyc
+ ┃ ┃ ┗ __init__.cpython-311.pyc
+ ┃ ┣ asgi.py
+ ┃ ┣ settings.py
+ ┃ ┣ urls.py
+ ┃ ┣ wsgi.py
+ ┃ ┗ __init__.py
+ ┣ groups
+ ┃ ┣ migrations
+ ┃ ┃ ┣ __pycache__
+ ┃ ┃ ┃ ┣ 0001_initial.cpython-311.pyc
+ ┃ ┃ ┃ ┗ __init__.cpython-311.pyc
+ ┃ ┃ ┣ 0001_initial.py
+ ┃ ┃ ┗ __init__.py
+ ┃ ┣ __pycache__
+ ┃ ┃ ┣ admin.cpython-311.pyc
+ ┃ ┃ ┣ apps.cpython-311.pyc
+ ┃ ┃ ┣ forms.cpython-311.pyc
+ ┃ ┃ ┣ models.cpython-311.pyc
+ ┃ ┃ ┣ permissions.cpython-311.pyc
+ ┃ ┃ ┣ serializers.cpython-311.pyc
+ ┃ ┃ ┣ urls.cpython-311.pyc
+ ┃ ┃ ┣ views.cpython-311.pyc
+ ┃ ┃ ┗ __init__.cpython-311.pyc
+ ┃ ┣ admin.py
+ ┃ ┣ apps.py
+ ┃ ┣ forms.py
+ ┃ ┣ models.py
+ ┃ ┣ permissions.py
+ ┃ ┣ serializers.py
+ ┃ ┣ tests.py
+ ┃ ┣ urls.py
+ ┃ ┣ views.py
+ ┃ ┗ __init__.py
+ ┣ order
+ ┃ ┣ migrations
+ ┃ ┃ ┣ __pycache__
+ ┃ ┃ ┃ ┣ 0001_initial.cpython-311.pyc
+ ┃ ┃ ┃ ┗ __init__.cpython-311.pyc
+ ┃ ┃ ┣ 0001_initial.py
+ ┃ ┃ ┗ __init__.py
+ ┃ ┣ __pycache__
+ ┃ ┃ ┣ admin.cpython-311.pyc
+ ┃ ┃ ┣ apps.cpython-311.pyc
+ ┃ ┃ ┣ models.cpython-311.pyc
+ ┃ ┃ ┣ permissions.cpython-311.pyc
+ ┃ ┃ ┣ serializers.cpython-311.pyc
+ ┃ ┃ ┣ urls.cpython-311.pyc
+ ┃ ┃ ┣ views.cpython-311.pyc
+ ┃ ┃ ┗ __init__.cpython-311.pyc
+ ┃ ┣ admin.py
+ ┃ ┣ apps.py
+ ┃ ┣ forms.py
+ ┃ ┣ models.py
+ ┃ ┣ permissions.py
+ ┃ ┣ serializers.py
+ ┃ ┣ tests.py
+ ┃ ┣ urls.py
+ ┃ ┣ views.py
+ ┃ ┗ __init__.py
+ ┣ payment
+ ┃ ┣ __pycache__
+ ┃ ┃ ┣ admin.cpython-311.pyc
+ ┃ ┃ ┣ apps.cpython-311.pyc
+ ┃ ┃ ┣ models.cpython-311.pyc
+ ┃ ┃ ┣ serializers.cpython-311.pyc
+ ┃ ┃ ┣ urls.cpython-311.pyc
+ ┃ ┃ ┣ utils.cpython-311.pyc
+ ┃ ┃ ┣ views.cpython-311.pyc
+ ┃ ┃ ┗ __init__.cpython-311.pyc
+ ┃ ┣ admin.py
+ ┃ ┣ apps.py
+ ┃ ┣ models.py
+ ┃ ┣ serializers.py
+ ┃ ┣ tests.py
+ ┃ ┣ urls.py
+ ┃ ┣ utils.py
+ ┃ ┣ views.py
+ ┃ ┗ __init__.py
+ ┣ users
+ ┃ ┣ migrations
+ ┃ ┃ ┣ __pycache__
+ ┃ ┃ ┃ ┣ 0001_initial.cpython-311.pyc
+ ┃ ┃ ┃ ┗ __init__.cpython-311.pyc
+ ┃ ┃ ┣ 0001_initial.py
+ ┃ ┃ ┗ __init__.py
+ ┃ ┣ template
+ ┃ ┃ ┗ users
+ ┃ ┃ ┃ ┗ profile_view.html
+ ┃ ┣ __pycache__
+ ┃ ┃ ┣ admin.cpython-311.pyc
+ ┃ ┃ ┣ apps.cpython-311.pyc
+ ┃ ┃ ┣ managers.cpython-311.pyc
+ ┃ ┃ ┣ models.cpython-311.pyc
+ ┃ ┃ ┣ serializers.cpython-311.pyc
+ ┃ ┃ ┣ urls.cpython-311.pyc
+ ┃ ┃ ┣ views.cpython-311.pyc
+ ┃ ┃ ┗ __init__.cpython-311.pyc
+ ┃ ┣ admin.py
+ ┃ ┣ apps.py
+ ┃ ┣ managers.py
+ ┃ ┣ models.py
+ ┃ ┣ serializers.py
+ ┃ ┣ tests.py
+ ┃ ┣ urls.py
+ ┃ ┣ views.py
+ ┃ ┗ __init__.py
+ ┣ __pycache__
+ ┃ ┗ manage.cpython-311.pyc
+ ┣ .env
+ ┣ .gitignore
+ ┣ manage.py
+ ┗ requirement.txt
 
 <br/><br/><br/><br/>
