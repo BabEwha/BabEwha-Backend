@@ -3,7 +3,7 @@
 #### 1️⃣ Client 레포지토리 링크: https://github.com/BabEwha/BabEwha-Client
 #### 2️⃣ AI 레포지토리 링크: https://github.com/BabEwha/BabEwha-AI
 
-<br/>
+<br/><br/>
 
 ## 🍙 프로젝트 소개
 
@@ -30,6 +30,7 @@
 | --- | --- | --- | --- | --- |
 | **엄채은** | **양연우** | **허혜민** | **김원정** | **이남영** |
 | 기획 | 디자이너 | 프론트엔드 | 백엔드 | IT기술(AI) |
+
 <br/><br/>
 
 ## 🍙 백엔드 사용 기술
