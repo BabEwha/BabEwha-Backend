@@ -17,13 +17,9 @@
 
 <img width="1000" src="https://github.com/BabEwha/BabEwha-ai-private/assets/91009436/adda6865-b0f4-4f80-9cad-79eb534990bb"/>
 
-
-
 - Client: Swift(iOS)
 - Server: Django, MySQL, AWS EC2, AWS S3
 - AI: Google Vision, Flask, AWS EC2
-
-
 
 <br/><br/>
 
@@ -33,9 +29,6 @@
 | --- | --- | --- | --- | --- |
 | **엄채은** | **양연우** | **허혜민** | **김원정** | **이남영** |
 | 기획 | 디자이너 | 클라이언트 | 백엔드 | IT기술(AI) |
-
-
-
 
 <br/>
 
@@ -48,4 +41,4 @@
 
 <br/>
 
-## 🍙 어쩌구
+## 🍙 
