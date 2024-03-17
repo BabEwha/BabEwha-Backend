@@ -45,6 +45,8 @@
 ## 🍙 ERD
 <img width="800" src="https://github.com/BabEwha/BabEwha-ai-private/assets/91009436/7342b758-3dce-4911-9d31-a736582aec5e"/>
 
+<br/><br/>
+
 ## 🍙 MySQL 쿼리문
 | <img width="200" src=""/> | <img width="200" src=""/> | <img width="200" src=""/> |
 | --- | --- | --- |
