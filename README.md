@@ -52,7 +52,7 @@
 ### 🍘 주요 코드 설명
 | <img width="400" src="https://github.com/BabEwha/BabEwha-ai-private/assets/91009436/68f6c686-5f8e-4dbf-9557-c05176cb64a1"/> | <img width="400" src="https://github.com/BabEwha/BabEwha-ai-private/assets/91009436/784cb07f-3b02-44f7-8cd7-36f937f7edc9"/> | 
 | --- | --- |
-| OrderSerializer로 사용자가 특정 배달 모임에 참여하기 위해 외부 배달 앱을 통해 주문하고자 하는 음식의 장바구니 사진을 업로드할 때 사용. 사용자가 선택한 배달 모임(group)에 입장할 수 있는 조건을 검증한 후, 조건을 만족하는 경우 Order 테이블과 사용자의 모임 참여 여부를 나타내는 Participate 관계 테이블에 인스턴스를 생성. Django의 Serializer를 활용하여 데이터를 직렬화 | GroupViewSet은 사용자가 특정 그룹에 참여하기 위한 과정을 관리하는 Django REST Framework의 뷰셋. 사용자 인증, 그룹 정보 직렬화, 그룹 관련 권한 관리, 그룹의 조회 및 조작을 위한 다양한 액션을 포함|
+| - OrderSerializer로 사용자가 특정 배달 모임에 참여하기 위해 외부 배달 앱을 통해 주문하고자 하는 음식의 장바구니 사진을 업로드할 때 사용 <br/> - 사용자가 선택한 배달 모임(group)에 입장할 수 있는 조건을 검증한 후, 조건을 만족하는 경우 Order 테이블과 사용자의 모임 참여 여부를 나타내는 Participate 관계 테이블에 인스턴스를 생성 <br/> - Django의 Serializer를 활용하여 데이터를 직렬화 | GroupViewSet은 사용자가 특정 그룹에 참여하기 위한 과정을 관리하는 Django REST Framework의 뷰셋 <br/> - 사용자 인증, 그룹 정보 직렬화, 그룹 관련 권한 관리, 그룹의 조회 및 조작을 위한 다양한 액션을 포함|
 
 <br/>
 
