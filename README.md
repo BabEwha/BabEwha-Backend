@@ -50,7 +50,6 @@
 ## 🍙 API 명세서
 <img width="800" src="https://github.com/BabEwha/BabEwha-Backend/assets/121528605/b38c28f5-647e-4d1e-9edf-71df81782e7b"/>
 
-![image](https://github.com/BabEwha/BabEwha-Backend/assets/121528605/b38c28f5-647e-4d1e-9edf-71df81782e7b)
 
 
 ## 🍙 백엔드 기능 설명
