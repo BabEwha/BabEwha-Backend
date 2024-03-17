@@ -68,7 +68,8 @@
 <br/><br/>
 
 ## 🍙 API 명세서
-<img width="700" src="https://github.com/BabEwha/BabEwha-Backend/assets/121528605/b38c28f5-647e-4d1e-9edf-71df81782e7b"/>
+<img width="700" src="https://github.com/BabEwha/BabEwha-Backend/assets/121528605/42e42abd-2045-434c-adca-23f9332338e1"/>
+"/>
 
 ## 🍙 백엔드 기능 설명
 
