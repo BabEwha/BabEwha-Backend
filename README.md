@@ -1,4 +1,4 @@
-# 🍚 밥이화(BabEwha) 🍚
+![image](https://github.com/BabEwha/BabEwha-Backend/assets/121528605/ece77424-a899-4f74-98a6-a2c40875f225)# 🍚 밥이화(BabEwha) 🍚
 ### OCR 기반 배달 어플리케이션 **🍚** **밥이화(BabEwha) 🍚** Backend 레포지토리입니다.
 #### 1️⃣ Client 레포지토리 링크: https://github.com/BabEwha/BabEwha-Client
 #### 2️⃣ AI 레포지토리 링크: https://github.com/BabEwha/BabEwha-AI
@@ -46,6 +46,12 @@
 <img width="800" src="https://github.com/BabEwha/BabEwha-ai-private/assets/91009436/7342b758-3dce-4911-9d31-a736582aec5e"/>
 
 <br/><br/>
+
+## 🍙 API 명세서
+<img width="800" src="https://github.com/BabEwha/BabEwha-Backend/assets/121528605/b38c28f5-647e-4d1e-9edf-71df81782e7b"/>
+
+![image](https://github.com/BabEwha/BabEwha-Backend/assets/121528605/b38c28f5-647e-4d1e-9edf-71df81782e7b)
+
 
 ## 🍙 백엔드 기능 설명
 
