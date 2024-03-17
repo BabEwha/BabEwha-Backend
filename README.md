@@ -54,7 +54,7 @@
 
 | <img width="300" src="https://github.com/BabEwha/BabEwha-ai-private/assets/91009436/092ea509-35d5-491b-aced-47ed477f1239"/> | <img width="400" src="https://github.com/BabEwha/BabEwha-ai-private/assets/91009436/ab21662a-8203-4395-9842-20cec571714c"/> | <img width="400" src="https://github.com/BabEwha/BabEwha-ai-private/assets/91009436/9f17aabf-5bf6-4eca-a329-9e3efa4b374e"/> |
 | --- | --- | --- |
-| **배달 모임 생성(리더벗)** | **주문 넣기(참여벗)** | **배달 모임 리스트 나열** |
+| **1️⃣ 배달 모임 생성(리더벗)** | **2️⃣ 주문 넣기(참여벗)** | **3️⃣ 배달 모임 리스트 나열** |
 | 리더벗이 '장소, 최대 인원,시간 제한 등'을 기입하여 모임 생성 | 참여벗이 장바구니 캡쳐본으로 주문을 넣을시 주문 생성 | 현재 공구 중인 배달 게시물을 피드의 형태로 나열 |
 
 <br/>
