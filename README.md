@@ -42,7 +42,10 @@
 
 <br/><br/>
 
-## 🍙 ERD와 MySQL 쿼리문
+## 🍙 ERD
+<img width="800" src=""/>
+
+## 🍙 MySQL 쿼리문
 <img width="800" src=""/>
 
 | **** | **** | **** |
